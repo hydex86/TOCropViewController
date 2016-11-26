@@ -80,6 +80,11 @@ typedef NS_ENUM(NSInteger, TOCropViewControllerToolbarPosition) {
  @param angle The angle of the image when it was cropped
  */
 - (void)cropViewController:(nonnull TOCropViewController *)cropViewController didCropToCircularImage:(nonnull UIImage *)image withRect:(CGRect)cropRect angle:(NSInteger)angle;
+/**
+ Overrides did tap rotate method
+ */
+
+- (void)cropViewController:(nonnull TOCropViewController *)cropViewController didTapRotate:(BOOL)rotated;
 
 /**
  If implemented, when the user hits cancel, or completes a 

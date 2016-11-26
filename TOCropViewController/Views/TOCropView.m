@@ -1569,6 +1569,7 @@ typedef NS_ENUM(NSInteger, TOCropViewOverlayEdge) {
     }
     
     [self checkForCanReset];
+
 }
 
 - (void)captureStateForImageRotation

@@ -532,14 +532,22 @@
     [self.cropView setAspectRatio:aspectRatio animated:animated];
 }
 
-- (void)rotateCropViewClockwise
-{
-    [self.cropView rotateImageNinetyDegreesAnimated:YES clockwise:YES];
+- (void)rotateCropViewClockwise {
+    if ([self.delegate respondsToSelector:@selector(cropViewController:didTapRotate:)]) {
+        [self.delegate cropViewController:self didTapRotate:YES];
+    } else {
+        [self.cropView rotateImageNinetyDegreesAnimated:YES clockwise:YES];
+    }
 }
 
-- (void)rotateCropViewCounterclockwise
-{
-    [self.cropView rotateImageNinetyDegreesAnimated:YES clockwise:NO];
+- (void)rotateCropViewCounterclockwise {
+    if ([self.delegate respondsToSelector:@selector(cropViewController:didTapRotate:)]) {
+        [self.delegate cropViewController:self didTapRotate:YES];
+    } else {
+        [self.cropView rotateImageNinetyDegreesAnimated:YES clockwise:NO];
+    }
+    
+    
 }
 
 #pragma mark - Crop View Delegates -
